@@ -34,10 +34,12 @@ def draw_bar_plot():
     df_bar['month'] = pd.Categorical(df_bar['month'], categories=months)
 
     # Draw bar plot
-
-
-
-
+    fig = plt.figure(figsize=(12,11))
+    sns.barplot(x = df_bar['year'], y=df_bar['value'], hue = df_bar['month'], ci=None)
+    plt.ylabel('Average Page Views')
+    plt.xlabel('Years')
+    plt.legend(title='Months',bbox_to_anchor=(0, 1), loc='upper left')
+    plt.show()
 
     # Save image and return fig (don't change this part)
     fig.savefig('bar_plot.png')
