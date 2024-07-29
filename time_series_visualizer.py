@@ -53,7 +53,10 @@ def draw_box_plot():
     df_box['month'] = [d.strftime('%b') for d in df_box.date]
 
     # Draw box plots (using Seaborn)
-
+    months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug",
+              "Sep", "Oct", "Nov", "Dec"]
+    df_box['month'] = pd.Categorical(df_box['month'], categories=months)
+    df_box.info()
 
 
 
