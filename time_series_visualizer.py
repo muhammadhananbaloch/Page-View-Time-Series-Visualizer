@@ -29,8 +29,8 @@ def draw_bar_plot():
     df_bar = df.copy()
     df_bar['year'] = df.index.to_frame()['date'].dt.year
     df_bar['month'] = df.index.to_frame()['date'].dt.strftime('%b')
-    months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug",
-              "Sep", "Oct", "Nov", "Dec"]
+    months = ["January", "February", "March", "April", "May", "June", "July", "August",
+              "September", "October", "November", "December"]
     df_bar['month'] = pd.Categorical(df_bar['month'], categories=months)
 
     # Draw bar plot
