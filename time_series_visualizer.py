@@ -56,9 +56,21 @@ def draw_box_plot():
     months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug",
               "Sep", "Oct", "Nov", "Dec"]
     df_box['month'] = pd.Categorical(df_box['month'], categories=months)
-    df_box.info()
 
-
+    fig = plt.figure(figsize=(18,6))
+    plt.subplot(121)
+    sns.boxplot(data=df_box, x=df_box['year'], y=df_box['value'])
+    plt.xlabel("Year")
+    plt.ylabel('Page Views')
+    plt.title('Year-wise Box Plot (Trend)')
+ 
+    plt.subplot(122)
+    sns.boxplot(data=df_box, x=df_box['month'], y=df_box['value'])
+    plt.xlabel("Month")
+    plt.ylabel('Page Views')
+    plt.title('Month-wise Box Plot (Seasonality)')
+    
+    plt.show()
 
 
     # Save image and return fig (don't change this part)
