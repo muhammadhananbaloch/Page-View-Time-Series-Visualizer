@@ -32,6 +32,7 @@ def draw_bar_plot():
     months = ["January", "February", "March", "April", "May", "June", "July", "August",
               "September", "October", "November", "December"]
     df_bar['month'] = pd.Categorical(df_bar['month'], categories=months)
+    df_bar_agg = df_bar.groupby(['year', 'month'], observed=True)['value'].mean().unstack()
 
     # Draw bar plot
     fig = plt.figure(figsize=(12,11))
