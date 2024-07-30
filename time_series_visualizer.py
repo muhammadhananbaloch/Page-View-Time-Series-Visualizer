@@ -35,8 +35,7 @@ def draw_bar_plot():
     df_bar_agg = df_bar.groupby(['year', 'month'], observed=True)['value'].mean().unstack()
 
     # Draw bar plot
-    fig = plt.figure(figsize=(12,11))
-    sns.barplot(x = df_bar['year'], y=df_bar['value'], hue = df_bar['month'], ci=None)
+    fig = df_bar_agg.plot(kind='bar').get_figure()
     plt.ylabel('Average Page Views')
     plt.xlabel('Years')
     plt.legend(title='Months',bbox_to_anchor=(0, 1), loc='upper left')
