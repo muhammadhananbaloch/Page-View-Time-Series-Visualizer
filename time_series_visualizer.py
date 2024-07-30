@@ -38,7 +38,7 @@ def draw_bar_plot():
     fig = df_bar_agg.plot(kind='bar').get_figure()
     plt.ylabel('Average Page Views')
     plt.xlabel('Years')
-    plt.legend(title='Months',bbox_to_anchor=(0, 1), loc='upper left')
+    plt.legend(title='Months')
     plt.show()
 
     # Save image and return fig (don't change this part)
