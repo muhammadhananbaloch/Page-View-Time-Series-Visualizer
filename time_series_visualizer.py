@@ -36,6 +36,8 @@ def draw_bar_plot():
 
     # Draw bar plot
     fig = df_bar_agg.plot(kind='bar').get_figure()
+    fig.set_figheight(6)
+    fig.set_figwidth(8)
     plt.ylabel('Average Page Views')
     plt.xlabel('Years')
     plt.legend(title='Months')
